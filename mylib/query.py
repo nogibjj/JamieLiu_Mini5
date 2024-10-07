@@ -30,14 +30,22 @@ def general_query(query):
     log_query(f"{query}")
 
 
-def create_record(country, beer_servings, spirit_servings, wine_servings, total_alcohol):
+def create_record(country, 
+                  beer_servings, 
+                  spirit_servings, 
+                  wine_servings, 
+                  total_alcohol):
     """Create a new record in the drinks dataset."""
     conn = sqlite3.connect("DrinksDB.db")
     c = conn.cursor()
     c.execute(
         """
         INSERT INTO DrinksDB 
-        (country, beer_servings, spirit_servings, wine_servings, total_litres_of_pure_alcohol) 
+        (country, 
+        beer_servings, 
+        spirit_servings, 
+        wine_servings, 
+        total_litres_of_pure_alcohol) 
         VALUES (?, ?, ?, ?, ?)
         """,
         (country, beer_servings, spirit_servings, wine_servings, total_alcohol),
@@ -56,7 +64,11 @@ def create_record(country, beer_servings, spirit_servings, wine_servings, total_
     )
 
 
-def update_record(country, beer_servings, spirit_servings, wine_servings, total_alcohol):
+def update_record(country, 
+                  beer_servings, 
+                  spirit_servings, 
+                  wine_servings, 
+                  total_alcohol):
     """Update a record in the drinks dataset based on the country."""
     conn = sqlite3.connect("DrinksDB.db")
     c = conn.cursor()

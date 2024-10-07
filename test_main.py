@@ -37,11 +37,11 @@ def test_update_record():
             "python",
             "main.py",
             "update_record",
-            "Germany",   # Using country as identifier
-            "320",       # Updated beer_servings
-            "210",       # Updated spirit_servings
-            "160",       # Updated wine_servings
-            "13.0",      # Updated total_alcohol
+            "Germany",  # Using country as identifier
+            "320",  # Updated beer_servings
+            "210",  # Updated spirit_servings
+            "160",  # Updated wine_servings
+            "13.0",  # Updated total_alcohol
         ],
         capture_output=True,
         text=True,
@@ -68,11 +68,11 @@ def test_create_record():
             "python",
             "main.py",
             "create_record",
-            "Germany",    # country
-            "300",        # beer_servings
-            "200",        # spirit_servings
-            "150",        # wine_servings
-            "12.5",       # total_litres_of_pure_alcohol
+            "Germany",  # country
+            "300",  # beer_servings
+            "200",  # spirit_servings
+            "150",  # wine_servings
+            "12.5",  # total_litres_of_pure_alcohol
         ],
         capture_output=True,
         text=True,
@@ -88,7 +88,8 @@ def test_general_query():
             "python",
             "main.py",
             "general_query",
-            "SELECT * FROM DrinksDB WHERE country = 'Germany'",  # Query based on country
+            "SELECT * FROM DrinksDB WHERE country = 'Germany'",
+            # Query based on country
         ],
         capture_output=True,
         text=True,
