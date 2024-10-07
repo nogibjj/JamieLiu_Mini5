@@ -14,13 +14,14 @@ def load(dataset="data/drinks.csv"):
     #prints the full working directory and path
     print(os.getcwd())
     payload = csv.reader(open(dataset, newline=''), delimiter=',')
-    conn = sqlite3.connect('drinksDB.db')
+    conn = sqlite3.connect('DrinksDB.db')
     c = conn.cursor()
-    c.execute("DROP TABLE IF EXISTS drinksDB")
-    c.execute("CREATE TABLE drinksDB (country,beer_servings,spirit_servings,wine_servings,total_litres_of_pure_alcohol)")
+    c.execute("DROP TABLE IF EXISTS DrinksDB")
+    c.execute("CREATE TABLE DrinksDB \
+              (country,beer_servings,spirit_servings,wine_servings,total_litres_of_pure_alcohol)")
     #insert
-    c.executemany("INSERT INTO drinksDB VALUES (?, ?, ?, ?, ?)", payload)
+    c.executemany("INSERT INTO DrinksDB VALUES (?, ?, ?, ?, ?)", payload)
     conn.commit()
     conn.close()
-    return "drinksDB.db"
+    return "DrinksDB.db"
 
