@@ -14,6 +14,6 @@ extract()
 print("Transforming data...")
 load()
 
-# Query
-print("Querying data...")
-query()
+# # Query
+# print("Querying data...")
+# query()
